@@ -1,0 +1,118 @@
+T1 Reason 10179 10197 recurrent seizures
+T3 Drug 10227 10233 ativan
+T6 Drug 10455 10465 Topiramate
+T17 Drug 11014 11024 vancomycin
+T18 Drug 11026 11034 cefepime
+T19 Drug 11036 11042 flagyl
+T20 Drug 11044 11049 cipro
+T21 Drug 11055 11066 oseltamavir
+T23 Drug 11091 11103 soludemedrol
+T24 Drug 11108 11117 albuterol
+T27 Reason 11442 11451 agitation
+T28 Drug 11462 11470 sedation
+T29 Reason 11577 11586 agitation
+T30 Drug 11614 11622 seroquel
+T32 Reason 11694 11700 Asthma
+T34 Drug 1173 1183 vecuronium
+T36 Drug 11735 11744 albuterol
+T37 Drug 11749 11761 ipratriopium
+T38 Drug 11773 11783 prednisone
+T40 Drug 11854 11860 Advair
+T42 Drug 11921 11927 advair
+T43 Reason 11988 11996 wheezing
+T44 Drug 1206 1209 epi
+T46 Reason 12116 12147 Ventilator associated pneumonia
+T47 Reason 1218 1224 asthma
+T48 Drug 12272 12276 vanc
+T49 Drug 12277 12285 cefepime
+T50 Drug 12290 12295 cipro
+T51 Drug 12297 12302 Cipro
+T53 Drug 12426 12431 Vanco
+T54 Drug 12432 12440 Cefepime
+T55 Reason 12823 12831 diuresed
+T57 Drug 12840 12845 lasix
+T59 Drug 12884 12889 lasix
+T62 Drug 12988 12998 carvedilol
+T63 Drug 13003 13013 Lisinopril
+T64 Drug 13018 13021 ACE
+T67 Reason 13058 13073 elevated Cr 1.9
+T68 Reason 13101 13108 low BPs
+T69 Reason 13152 13164 Hypertension
+T70 Drug 13269 13279 lisinopril
+T74 Reason 13616 13620 pain
+T76 Drug 13651 13657 ultram
+T78 Drug 13668 13675 tylenol
+T79 Drug 13682 13691 lidocaine
+T81 Drug 13700 13710 Calcitonin
+T82 Reason 13725 13729 pain
+T83 Drug 13977 13985 steroids
+T84 ADE 13994 14006 leukocytosis
+T85 Drug 14021 14031 prednisone
+T86 ADE 14071 14084 Hyperglycemia
+T87 Drug 14149 14157 steroids
+T89 Drug 14204 14211 insulin
+T90 Drug 14249 14256 insulin
+T91 Reason 1425 1428 CAP
+T92 Drug 14277 14287 prednisone
+T93 Reason 1433 1439 asthma
+T94 Drug 14411 14414 ACE
+T95 Drug 1453 1456 CTX
+T96 Drug 14605 14615 Carvedilol
+T97 Drug 1461 1473 azithromycin
+T99 Drug 14636 14641 Lasix
+T103 Drug 14655 14660 Xanax
+T108 Drug 14682 14691 albuterol
+T110 Drug 14696 14705 Ibuprofen
+T112 Drug 14710 14718 Benadryl
+T114 Drug 14723 14729 Advair
+T116 Drug 14737 14746 Lsinopril
+T119 Drug 14783 14792 bisacodyl
+T132 Reason 14904 14916 Constipation
+T133 Drug 14921 14926 senna
+T142 Reason 14998 15010 Constipation
+T143 Drug 15015 15028 acetaminophen
+T152 Reason 15100 15104 pain
+T154 Reason 15105 15110 fever
+T155 Drug 15115 15125 carvedilol
+T164 Drug 15188 15203 docusate sodium
+T173 Drug 15267 15277 furosemide
+T182 Drug 15338 15348 lisinopril
+T190 Drug 15404 15414 olanzapine
+T202 Reason 15531 15536 sleep
+T203 Drug 15542 15559 calcium carbonate
+T217 Drug 15651 15666 cholecalciferol
+T226 Drug 15738 15751 acetaminophen
+T236 Reason 15823 15827 pain
+T238 Reason 15828 15833 fever
+T239 Drug 15839 15848 lidocaine
+T252 Drug 16010 16029 ipratropium bromide
+T262 Drug 16099 16116 albuterol sulfate
+T275 Drug 16219 16236 albuterol sulfate
+T289 Reason 16348 16351 SOB
+T290 Drug 16357 16367 topiramate
+T296 Drug 164 171 Vicodin
+T307 Drug 16575 16583 tramadol
+T316 Reason 16654 16663 back pain
+T318 Drug 16669 16691 fluticasone-salmeterol
+T329 Drug 16791 16800 lorazepam
+T338 Reason 16865 16872 seizure
+T339 Reason 16883 16904 longer than 5 minutes
+T340 Reason 17796 17804 seizures
+T341 Drug 17845 17865 seizure medications
+T342 Drug 1829 1832 epi
+T343 Drug 1837 1843 bicarb
+T345 Drug 744 756 azithromycin
+T347 Drug 761 772 epinephrine
+T348 Drug 778 788 solumedrol
+T349 Drug 904 915 epinephrine
+T350 Drug 917 925 atropine
+T351 Drug 927 936 magnesium
+T352 Reason 9314 9323 grand mal seizure
+T354 Drug 9346 9352 ativan
+T355 Drug 9368 9374 Keppra
+T356 Drug 942 948 bicarb
+T357 Reason 9528 9537 aggitated
+T358 Drug 9545 9551 Keppra
+T359 Drug 9568 9578 Topiramate
+T360 Drug 9751 9758 topamax
+T344 Drug 739 742 CTX'
