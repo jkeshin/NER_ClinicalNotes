@@ -36,13 +36,14 @@ ann_data_files = [f for f in listdir(DATA_DIRECTORY) if isfile(join(DATA_DIRECTO
 for file in ann_data_files:
     entities = []
 
-    # process .ann file - place entities and relations into 2 seperate lists of tuples
+    # process .ann file - place entities and relations into 2 separate lists of tuples
     with open(join(DATA_DIRECTORY, file), 'r') as document_anno_file:
         lines = document_anno_file.readlines()
         for line in lines:
-            standoff_line = line.split()
+            standoff_line = line.split(' ', 4)
             if standoff_line[0][0] == STANDOFF_ENTITY_PREFIX:
                 if standoff_line[1].capitalize() == 'Reason' or standoff_line[1].capitalize() == 'Drug' or standoff_line[1].capitalize() == 'Ade':
+                    print(standoff_line)
                     entity = {}
                     entity['standoff_id'] = int(standoff_line[0][1:])
                     entity['entity_type'] = standoff_line[1].capitalize()
@@ -65,19 +66,20 @@ for file in ann_data_files:
         for sentence in output['sentences']:
             entities_in_sentence = {}
             sentence_re_rows = []
-
             for token in sentence['tokens']:
                 offset_start = int(token['characterOffsetBegin'])
                 offset_end = int(token['characterOffsetEnd'])
-
                 re_row = {}
                 entity_found = False
                 ner_anno = DEFAULT_OTHER_ANNO
-
                 # searching for token in annotated entities
                 for entity in entities:
-                    if offset_start >= entity['offset_start'] and offset_end <= entity['offset_end']:
-                        ner_anno = entity['entity_type']
+                    if offset_start == entity['offset_start']:
+                        print("Entity: ", entity)
+                        print("Offset start: ", offset_start, " and offset end: ", offset_end)
+                        ner_anno = "B-"+entity['entity_type']
+                    if (offset_start > entity['offset_start'] and offset_end <= entity['offset_end']) or (offset_start == entity['offset_start'] and offset_end == entity['offset_end']):
+                        ner_anno = "I-"+entity['entity_type']
 
                     # multi-token entities for RE need to be handled differently than NER
                     if offset_start == entity['offset_start'] and offset_end <= entity['offset_end']:
@@ -102,6 +104,8 @@ for file in ann_data_files:
                     re_row['word'] = token['word']
 
                     sentence_re_rows.append(re_row)
+
+                print("Token: " + token['word'] + ", ner tag: " + ner_anno)
 
                 # writing tagged tokens to NER training data
                 ner_training_data.write('{}\t{}\n'.format(token['word'], ner_anno))
