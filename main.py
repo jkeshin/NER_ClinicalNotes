@@ -15,11 +15,11 @@ from os.path import isfile, join
 DEFAULT_OTHER_ANNO = 'O'
 STANDOFF_ENTITY_PREFIX = 'T'
 STANDOFF_RELATION_PREFIX = 'R'
-DATA_DIRECTORY = 'data'
+DATA_DIRECTORY = 'test'
 OUTPUT_DIRECTORY = 'output'
 CORENLP_SERVER_ADDRESS = 'http://localhost:9000'
 
-NER_TRAINING_DATA_OUTPUT_PATH = join(OUTPUT_DIRECTORY, 'ner-crf-training-data.tsv')
+NER_TRAINING_DATA_OUTPUT_PATH = join(OUTPUT_DIRECTORY, 'ner-crf-test-data.tsv')
 
 if os.path.exists(OUTPUT_DIRECTORY):
     if os.path.exists(NER_TRAINING_DATA_OUTPUT_PATH):
@@ -57,7 +57,7 @@ for file in ann_data_files:
         document_text = document_text_file.read()
 
     output = nlp.annotate(document_text, properties={
-        'annotators': 'tokenize,ssplit,pos',
+        'annotators': 'tokenize,ssplit',
         'outputFormat': 'json'
     })
 
@@ -85,7 +85,6 @@ for file in ann_data_files:
                     if offset_start == entity['offset_start'] and offset_end <= entity['offset_end']:
                         entities_in_sentence[entity['standoff_id']] = len(sentence_re_rows)
                         re_row['entity_type'] = entity['entity_type']
-                        re_row['pos_tag'] = token['pos']
                         re_row['word'] = token['word']
 
                         sentence_re_rows.append(re_row)
@@ -93,14 +92,12 @@ for file in ann_data_files:
                         break
                     elif offset_start > entity['offset_start'] and offset_end <= entity['offset_end'] and len(
                             sentence_re_rows) > 0:
-                        sentence_re_rows[-1]['pos_tag'] += '/{}'.format(token['pos'])
                         sentence_re_rows[-1]['word'] += '/{}'.format(token['word'])
                         entity_found = True
                         break
 
                 if not entity_found:
                     re_row['entity_type'] = DEFAULT_OTHER_ANNO
-                    re_row['pos_tag'] = token['pos']
                     re_row['word'] = token['word']
 
                     sentence_re_rows.append(re_row)
